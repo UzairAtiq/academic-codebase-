@@ -329,15 +329,3 @@ This project is created for educational purposes as part of the Programming for 
 
 ---
 
-## 📞 Contact
-
-**Muhammad Uzair Attiq**  
-Enrollment: 01-136242-029
-
----
-
-*That's some main character energy right there! ✨*
-
----
-
-*That's some main character energy right there! ✨*
