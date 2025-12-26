@@ -1,0 +1,9 @@
+What Version Control Means to Me
+===================================
+
+Version control, to me, is like having a time machine for my code. It's a system that tracks every change I make to my project, allowing me to see what I did, when I did it, and why I did it. More importantly, it gives me the freedom to experiment without fear - if something breaks, I can always go back to a working version. Version control also enables collaboration, letting multiple people work on the same project without overwriting each other's work. Tools like Git have become essential in my development workflow because they provide safety, organization, and a clear history of my project's evolution. It's not just about saving files; it's about managing the entire journey of a project from start to finish.
+
+Author: Muhammad Uzair Attiq
+Enrollment: 01-136242-029
+Course: Programming for Artificial Intelligence
+Date: November 23, 2025
