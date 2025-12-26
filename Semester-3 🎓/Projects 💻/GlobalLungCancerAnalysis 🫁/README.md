@@ -122,48 +122,150 @@ global-lung-cancer-analysis/
 
 ### Prerequisites
 
-- **Python 3.8+** (Python 3.12 recommended)
+- **Python 3.8+** (Python 3.12+ recommended)
 - **pip** (Python package manager)
+- **Git** (for cloning the repository)
 
-### Quick Setup (Automated)
+### 📦 Installation & Setup
 
-Run the automated setup script to create a virtual environment and install all dependencies:
+**Method 1: Automated Setup (Recommended)** ⚡
+
+The easiest way to get started is using our automated setup script:
 
 ```bash
-# Make the script executable (first time only)
-chmod +x setup.sh
+# Navigate to the project directory
+cd "GlobalLungCancerAnalysis 🫁"
 
-# Run the setup script
+# Run the automated setup script (creates venv + installs packages)
 ./setup.sh
 
 # Activate the virtual environment
 source venv/bin/activate
+```
 
-# Launch Jupyter Notebook
+**Method 2: Manual Setup** 🔧
+
+If you prefer step-by-step installation:
+
+```bash
+# 1. Create a virtual environment
+python3 -m venv venv
+
+# 2. Activate the virtual environment
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# 3. Upgrade pip
+pip install --upgrade pip
+
+# 4. Install all dependencies
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ How to Run the Project
+
+### Option 1: Using Jupyter in Browser (Recommended)
+
+This is the most stable way to run the analysis:
+
+```bash
+# Ensure virtual environment is activated
+source venv/bin/activate
+
+# Launch Jupyter Notebook in your browser
 jupyter notebook notebooks/LungCancer-Analysis.ipynb
 ```
 
-### Manual Setup
+This will:
+- ✅ Open Jupyter in your default browser
+- ✅ Automatically use the correct Python environment
+- ✅ Provide a stable kernel connection
+- ✅ Allow you to run all cells sequentially
 
-If you prefer manual installation:
+### Option 2: Using VS Code Jupyter Extension
 
-1. **Create a virtual environment** (recommended)
+If you prefer working in VS Code:
 
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+1. **Open the notebook** in VS Code
+2. **Select the correct kernel:**
+   - Click the kernel selector in top-right corner
+   - Choose "Select Another Kernel..."
+   - Select "Python Environments..."
+   - Pick the `venv` environment from the project folder
+3. **Run cells** using Shift+Enter
 
-2. **Install dependencies**
+**Note:** If you encounter "kernel disposed" errors in VS Code, use Option 1 (browser) instead.
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+---
 
-3. **Launch Jupyter Notebook**
-   ```bash
-   jupyter notebook notebooks/LungCancer-Analysis.ipynb
-   ```
+## 🎯 How It Works
+
+### Project Workflow
+
+```
+1. Data Collection → 2. Preprocessing → 3. Analysis → 4. Visualization → 5. Insights
+```
+
+**Step 1: Data Loading** 📂
+- Loads 890K+ lung cancer patient records
+- Loads global air pollution data from 6,985 cities
+- Verifies data integrity and structure
+
+**Step 2: Data Preprocessing** 🧹
+- Removes duplicates and handles missing values
+- Normalizes numerical features (0-1 range)
+- Performs time-series interpolation for pollution data
+- Splits large datasets for efficient processing
+
+**Step 3: Exploratory Data Analysis (EDA)** 🔍
+- Statistical summaries and distributions
+- Identifies patterns and trends
+- Analyzes correlations between variables
+- Examines risk factors and outcomes
+
+**Step 4: Statistical Analysis** 📊
+- Hypothesis testing (t-tests, ANOVA)
+- Correlation analysis (Pearson, Spearman)
+- Survival rate analysis by risk factors
+- Pollution-cancer relationship investigation
+
+**Step 5: Visualization & Insights** 📈
+- Creates comprehensive plots and charts
+- Generates heatmaps and distribution plots
+- Produces interactive visualizations
+- Exports findings to `visuals/` directory
+
+### Running Individual Components
+
+**Preprocessing Scripts:**
+```bash
+# Run medical data preprocessing
+python scripts/data_preprocessing.py
+
+# Run air pollution preprocessing
+python scripts/air_pollution_preprocessing.py
+
+# Verify preprocessing results
+python scripts/verify_preprocessing.py
+```
+
+**Main Analysis:**
+```bash
+# Run the complete analysis notebook
+jupyter notebook notebooks/LungCancer-Analysis.ipynb
+```
+
+---
+
+## 💡 Usage Tips
+
+- ✅ **Always activate the virtual environment** before running any code
+- ✅ **Run cells sequentially** in the notebook (top to bottom)
+- ✅ **First cell imports all libraries** - make sure it runs without errors
+- ✅ **Datasets are included** in the `datasets/` folder
+- ✅ **Visualizations are saved** to the `visuals/` folder automatically
+- ✅ **Use browser Jupyter** if VS Code kernel issues occur
 
 ### Deactivating Virtual Environment
 
